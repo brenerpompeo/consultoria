@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Arquitetura de Impacto — Consultoria & eBooks</title>
+  <meta name="description" content="Ecossistema com consultoria, programas e eBooks para acelerar comunicação e liderança." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">★</div>
+        <span>Arquitetura de Impacto</span>
+      </div>
+      <nav class="menu">
+        <a href="#inicio">Início</a>
+        <a href="#ebooks">eBooks</a>
+        <a href="#consultoria">Consultoria</a>
+        <a href="#programas">Programas</a>
+        <a href="#conteudos">Conteúdos</a>
+        <a href="#sobre">Sobre</a>
+      </nav>
+      <button class="btn" id="open-cart" aria-label="Abrir carrinho">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4h-2l-1 2h2l3.6 7.59-1.35 2.44c-.16.28-.25.61-.25.97 0 1.1.9 2 2 2h9v-2h-9l1.1-2h5.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.3.12-.48 0-.55-.45-1-1-1h-14zm-2 16c-1.1 0-2 .9-2 2 0 1.11.9 2 2 2s2-.89 2-2c0-1.1-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2 0 1.11.9 2 2 2s2-.89 2-2c0-1.1-.9-2-2-2z"/></svg>
+        Carrinho
+      </button>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="section hero">
+      <div class="container">
+        <div class="hero-surface">
+          <div class="badge">Ecossistema de Consultoria & eBooks</div>
+          <h1>Estratégia, comunicação e liderança — com conteúdo aplicável e suporte de especialistas</h1>
+          <p>Construa autoridade e gere resultado com serviços de consultoria, programas e uma biblioteca de eBooks focados em execução.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#ebooks">Explorar eBooks</a>
+            <a class="btn" href="#consultoria">Falar com consultor</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ebooks">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>eBooks</h2>
+            <p class="muted">Biblioteca prática para acelerar posicionamento, comunicação e liderança.</p>
+          </div>
+          <div class="filters">
+            <div class="search">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+              <input id="search-input" type="text" placeholder="Buscar título..." />
+            </div>
+            <div class="pills" id="tag-pills"></div>
+          </div>
+        </div>
+        <div class="grid" id="ebooks-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="consultoria">
+      <div class="container">
+        <h2>Consultoria</h2>
+        <p class="muted">Formatos sob medida para profissionais e empresas — do diagnóstico à execução.</p>
+        <div class="grid three">
+          <div class="card">
+            <div class="badge">Sprint</div>
+            <h3>Diagnóstico Express</h3>
+            <ul class="list">
+              <li>Mapa de posicionamento</li>
+              <li>Plano de ação — 30 dias</li>
+              <li>Recomendações por canal</li>
+            </ul>
+            <a class="btn" id="cta-calendly">Agendar</a>
+          </div>
+          <div class="card card-strong">
+            <div class="badge">Premium</div>
+            <h3>Mentoria 1:1 (12 semanas)</h3>
+            <ul class="list">
+              <li>Sessões semanais ao vivo</li>
+              <li>Roteiros & rituais</li>
+              <li>Suporte assíncrono</li>
+            </ul>
+            <a class="btn" id="cta-mentoria">Falar com especialista</a>
+          </div>
+          <div class="card">
+            <div class="badge">In-company</div>
+            <h3>Corporate Labs</h3>
+            <ul class="list">
+              <li>Workshops personalizados</li>
+              <li>Playbook de comunicação</li>
+              <li>Acompanhamento trimestral</li>
+            </ul>
+            <a class="btn" id="cta-proposta">Solicitar proposta</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="programas">
+      <div class="container">
+        <h2>Programas</h2>
+        <div class="grid two">
+          <div class="card">
+            <div class="row">
+              <h3>Cohort — Posicionamento na Prática</h3>
+              <span class="badge">Próx. turma: 15/09</span>
+            </div>
+            <ul class="list">
+              <li>4 encontros ao vivo</li>
+              <li>Templates & checklists</li>
+              <li>Comunidade</li>
+            </ul>
+            <a class="btn" id="cta-cohort">Inscrever-se</a>
+          </div>
+          <div class="card">
+            <div class="row">
+              <h3>Bootcamp — Storytelling & Pitch</h3>
+              <span class="badge">Próx. turma: 01/10</span>
+            </div>
+            <ul class="list">
+              <li>Imersão de 8h</li>
+              <li>Feedback individual</li>
+              <li>Certificado</li>
+            </ul>
+            <a class="btn" id="cta-bootcamp">Inscrever-se</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="conteudos">
+      <div class="container">
+        <h2>Conteúdos</h2>
+        <p class="muted">Artigos, guias e estudos para aplicar no dia a dia.</p>
+        <div class="grid three">
+          <div class="card">
+            <div class="badge">Estratégia</div>
+            <h3>Como construir uma proposta de valor memorável</h3>
+            <a class="btn" href="#">Ler</a>
+          </div>
+          <div class="card">
+            <div class="badge">Comunicação</div>
+            <h3>5 frameworks de storytelling para já</h3>
+            <a class="btn" href="#">Ler</a>
+          </div>
+          <div class="card">
+            <div class="badge">Produtividade</div>
+            <h3>Rituais para manter consistência semanal</h3>
+            <a class="btn" href="#">Ler</a>
+          </div>
+        </div>
+
+        <div class="newsletter">
+          <div class="badge">Newsletter semanal</div>
+          <h3>Receba frameworks e checklists no seu e-mail</h3>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Obrigado! (Integre seu provedor de e-mail aqui)');">
+            <input type="email" placeholder="Seu e-mail" required />
+            <button class="btn btn-primary" type="submit">Assinar</button>
+          </form>
+          <p class="micro center">Sem spam. Você pode cancelar quando quiser.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container">
+        <h2>Sobre o ecossistema</h2>
+        <div class="about">
+          <p><strong>Arquitetura de Impacto</strong> é um hub de soluções para líderes, criadores e times que desejam comunicar com clareza e gerar impacto real. Oferecemos consultoria sob medida, programas em grupo e uma biblioteca de eBooks para execução prática.</p>
+          <ul class="list">
+            <li>Abordagem ética e centrada em pessoas</li>
+            <li>Conteúdo autoral, direto ao ponto</li>
+            <li>Comunidade e apoio entre pares</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container foot">
+      <div class="col">
+        <div class="brand">
+          <div class="logo">★</div><span>Arquitetura de Impacto</span>
+        </div>
+        <p class="micro">Ecossistema com consultoria, programas e eBooks para acelerar sua comunicação e liderança.</p>
+      </div>
+      <div class="col">
+        <h4>Mapa do site</h4>
+        <a href="#ebooks">eBooks</a>
+        <a href="#consultoria">Consultoria</a>
+        <a href="#programas">Programas</a>
+        <a href="#conteudos">Conteúdos</a>
+      </div>
+      <div class="col">
+        <h4>Suporte</h4>
+        <p class="micro">E-mail: suporte@impacto.eco (exemplo)</p>
+        <p class="micro">Seg–Sex, 9h–18h (BRT)</p>
+      </div>
+    </div>
+    <div class="copy">© <span id="year"></span> Arquitetura de Impacto. Todos os direitos reservados.</div>
+  </footer>
+
+  <aside class="cart" id="cart">
+    <div class="cart-backdrop" id="cart-backdrop"></div>
+    <div class="cart-panel">
+      <div class="cart-head">
+        <h3>Seu carrinho</h3>
+        <button class="icon" id="close-cart" aria-label="Fechar">✕</button>
+      </div>
+      <div id="cart-items" class="cart-items"></div>
+      <div class="cart-total">
+        <div>Total</div>
+        <strong id="cart-total">R$ 0,00</strong>
+      </div>
+      <a id="checkout" class="btn btn-primary" href="#" target="_blank" rel="noopener">Finalizar compra</a>
+      <p class="micro center">Integre seu link de checkout em <code>app.js</code></p>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
