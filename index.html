@@ -22,10 +22,17 @@
         <a href="#conteudos">Conteúdos</a>
         <a href="#sobre">Sobre</a>
       </nav>
-      <button class="btn" id="open-cart" aria-label="Abrir carrinho">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4h-2l-1 2h2l3.6 7.59-1.35 2.44c-.16.28-.25.61-.25.97 0 1.1.9 2 2 2h9v-2h-9l1.1-2h5.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.3.12-.48 0-.55-.45-1-1-1h-14zm-2 16c-1.1 0-2 .9-2 2 0 1.11.9 2 2 2s2-.89 2-2c0-1.1-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2 0 1.11.9 2 2 2s2-.89 2-2c0-1.1-.9-2-2-2z"/></svg>
-        Carrinho
-      </button>
+      <div class="actions-right">
+        <!-- Toggle de tema -->
+        <button class="btn icon-only" id="theme-toggle" aria-label="Alternar tema">🌙</button>
+        <!-- Carrinho -->
+        <button class="btn" id="open-cart" aria-label="Abrir carrinho">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M7 4h-2l-1 2h2l3.6 7.59-1.35 2.44c-.16.28-.25.61-.25.97 0 1.1.9 2 2 2h9v-2h-9l1.1-2h5.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.3.12-.48 0-.55-.45-1-1-1h-14zm-2 16c-1.1 0-2 .9-2 2 0 1.11.9 2 2 2s2-.89 2-2c0-1.1-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2 0 1.11.9 2 2 2s2-.89 2-2c0-1.1-.9-2-2-2z"/>
+          </svg>
+          Carrinho
+        </button>
+      </div>
     </div>
   </header>
 
@@ -53,7 +60,9 @@
           </div>
           <div class="filters">
             <div class="search">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+              </svg>
               <input id="search-input" type="text" placeholder="Buscar título..." />
             </div>
             <div class="pills" id="tag-pills"></div>
@@ -140,16 +149,25 @@
         <p class="muted">Artigos, guias e estudos para aplicar no dia a dia.</p>
         <div class="grid three">
           <div class="card">
+            <div class="cover">
+              <img src="https://picsum.photos/seed/art1/800/500" alt="Capa do artigo Estratégia">
+            </div>
             <div class="badge">Estratégia</div>
             <h3>Como construir uma proposta de valor memorável</h3>
             <a class="btn" href="#">Ler</a>
           </div>
           <div class="card">
+            <div class="cover">
+              <img src="https://picsum.photos/seed/art2/800/500" alt="Capa do artigo Comunicação">
+            </div>
             <div class="badge">Comunicação</div>
             <h3>5 frameworks de storytelling para já</h3>
             <a class="btn" href="#">Ler</a>
           </div>
           <div class="card">
+            <div class="cover">
+              <img src="https://picsum.photos/seed/art3/800/500" alt="Capa do artigo Produtividade">
+            </div>
             <div class="badge">Produtividade</div>
             <h3>Rituais para manter consistência semanal</h3>
             <a class="btn" href="#">Ler</a>
@@ -207,11 +225,12 @@
     <div class="copy">© <span id="year"></span> Arquitetura de Impacto. Todos os direitos reservados.</div>
   </footer>
 
-  <aside class="cart" id="cart">
+  <!-- Drawer do carrinho -->
+  <aside class="cart" id="cart" aria-hidden="true">
     <div class="cart-backdrop" id="cart-backdrop"></div>
-    <div class="cart-panel">
+    <div class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title">
       <div class="cart-head">
-        <h3>Seu carrinho</h3>
+        <h3 id="cart-title">Seu carrinho</h3>
         <button class="icon" id="close-cart" aria-label="Fechar">✕</button>
       </div>
       <div id="cart-items" class="cart-items"></div>
