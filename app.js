@@ -4,9 +4,9 @@ const CHECKOUT_URL = "https://exemplo-de-checkout.com"; // troque pelo seu link 
 const CALENDLY_URL = "https://calendly.com/seu-link";   // troque pelo seu link
 
 // CMS externo gratuito (Contentful) — habilite quando tiver Space/Token
-const USE_CONTENTFUL   = false; // mude para true quando quiser usar CMS
-const CONTENTFUL_SPACE = "";    // ex.: "abcd1234xyz"
-const CONTENTFUL_TOKEN = "";    // Content Delivery (só leitura)
+const USE_CONTENTFUL   = true; // mude para true quando quiser usar CMS
+const CONTENTFUL_SPACE = "1kgxkf37biiv";    // ex.: "abcd1234xyz"
+const CONTENTFUL_TOKEN = "PlMk2iNRamJ_kmWCyJ4cyFX3-Hkqeiy0ucaPi_jQGxc";    // Content Delivery (só leitura)
 
 // ======= DADOS DE EXEMPLO (fallback local) =======
 const EBOOKS = [
