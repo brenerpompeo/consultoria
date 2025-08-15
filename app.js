@@ -1,39 +1,48 @@
 // ======= CONFIG =======
 const CHECKOUT_URL = ""; // não usado quando cada eBook tem seu próprio link
-// (Sem consultoria/programas neste momento)
 
 // ======= EBOOKS até R$ 29,90 (links Hotmart por eBook) =======
-// Troque checkoutUrl pelos seus links reais.
+// Imagens congruentes: usando Unsplash por palavra-chave (seed + query).
 const EBOOKS = [
   { id:"e1", title:"WhatsApp que Vende: 7 Mensagens-Prontas", price:19.90, tag:"Vendas", rating:4.8,
-    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E1", image:"https://picsum.photos/seed/wpp/800/500" },
+    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E1",
+    image:"https://source.unsplash.com/seed/wpp/800x500?whatsapp,smartphone,chat" },
 
   { id:"e2", title:"IA pra Conteúdo: 50 Prompts Úteis", price:24.90, tag:"IA", rating:4.9,
-    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E2", image:"https://picsum.photos/seed/ai/800/500" },
+    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E2",
+    image:"https://source.unsplash.com/seed/ai/800x500?ai,computer,workspace" },
 
   { id:"e3", title:"SEO Essencial 2025: Guia Prático", price:24.90, tag:"SEO", rating:4.7,
-    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E3", image:"https://picsum.photos/seed/seo/800/500" },
+    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E3",
+    image:"https://source.unsplash.com/seed/seo/800x500?seo,analytics,growth" },
 
   { id:"e4", title:"Roteiros de Reels/TikTok (30 dias)", price:29.90, tag:"Redes Sociais", rating:4.6,
-    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E4", image:"https://picsum.photos/seed/short/800/500" },
+    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E4",
+    image:"https://source.unsplash.com/seed/short/800x500?video,creator,phone" },
 
   { id:"e5", title:"Copy Essencial para Landing Pages", price:24.90, tag:"Conteúdo", rating:4.7,
-    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E5", image:"https://picsum.photos/seed/copy/800/500" },
+    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E5",
+    image:"https://source.unsplash.com/seed/copy/800x500?typing,notebook,writing" },
 
   { id:"e6", title:"LinkedIn B2B: Autoridade e Pipeline", price:29.90, tag:"Redes Sociais", rating:4.6,
-    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E6", image:"https://picsum.photos/seed/linkedin/800/500" },
+    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E6",
+    image:"https://source.unsplash.com/seed/linkedin/800x500?linkedin,b2b,office" },
 
   { id:"e7", title:"Calendário Editorial de 90 Dias", price:19.90, tag:"Conteúdo", rating:4.6,
-    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E7", image:"https://picsum.photos/seed/cal/800/500" },
+    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E7",
+    image:"https://source.unsplash.com/seed/cal/800x500?calendar,planner,notes" },
 
   { id:"e8", title:"Fluxos de E-mail p/ Vendas (5 prontos)", price:24.90, tag:"Vendas", rating:4.5,
-    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E8", image:"https://picsum.photos/seed/email/800/500" },
+    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E8",
+    image:"https://source.unsplash.com/seed/email/800x500?email,inbox,marketing" },
 
   { id:"e9", title:"Design Essencial no Canva (rápido)", price:19.90, tag:"Conteúdo", rating:4.6,
-    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E9", image:"https://picsum.photos/seed/canva/800/500" },
+    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E9",
+    image:"https://source.unsplash.com/seed/canva/800x500?design,colors,layout" },
 
   { id:"e10", title:"Rotina de Execução: 45′ por dia", price:19.90, tag:"Produtividade", rating:4.5,
-    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E10", image:"https://picsum.photos/seed/ritual/800/500" },
+    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E10",
+    image:"https://source.unsplash.com/seed/ritual/800x500?productivity,checklist,routine" },
 ];
 
 const TAGS = ["Todos","Vendas","Conteúdo","IA","SEO","Redes Sociais","Produtividade"];
@@ -64,9 +73,7 @@ let q = "";
 
 // ======= HELPERS =======
 const $  = s => document.querySelector(s);
-const $$ = s => document.querySelectorAll(s);
 const money = n => n.toLocaleString('pt-BR',{style:'currency', currency:'BRL'});
-
 function coverHtml(item, alt){
   return item?.image
     ? `<div class="cover"><img src="${item.image}" alt="${alt}"></div>`
@@ -75,7 +82,7 @@ function coverHtml(item, alt){
 
 // ---------- Tags ----------
 function renderTags(){
-  const wrap = $("#tag-pills"); if (!wrap) return;
+  const wrap = document.getElementById("tag-pills"); if (!wrap) return;
   wrap.innerHTML = "";
   TAGS.forEach(t => {
     const b = document.createElement("button");
@@ -88,7 +95,7 @@ function renderTags(){
 
 // ---------- Grid ----------
 function renderGrid(){
-  const grid = $("#ebooks-grid"); if (!grid) return;
+  const grid = document.getElementById("ebooks-grid"); if (!grid) return;
   grid.innerHTML = "";
   const list = EBOOKS.filter(e =>
     (currentTag==="Todos" || e.tag===currentTag) &&
@@ -107,10 +114,7 @@ function renderGrid(){
         <a class="btn" target="_blank" rel="noopener" href="${item.checkoutUrl}" aria-label="Comprar ${item.title} agora">Comprar agora</a>
       </div>
     `;
-    const addBtn = card.querySelector("button");
-    addBtn.onmouseenter = () => card.style.boxShadow = "0 14px 30px rgba(124,58,237,.28)";
-    addBtn.onmouseleave = () => card.style.boxShadow = "";
-    addBtn.onclick = () => addToCart(item);
+    card.querySelector("button").onclick = () => addToCart(item);
     grid.appendChild(card);
   });
 }
@@ -128,7 +132,7 @@ function removeFromCart(id){
 }
 function cartTotal(){ return CART.reduce((a,b)=>a+b.price,0); }
 function renderCart(){
-  const list = $("#cart-items"); if (!list) return;
+  const list = document.getElementById("cart-items"); if (!list) return;
   list.innerHTML = "";
   CART.forEach(it => {
     const row = document.createElement("div");
@@ -143,15 +147,15 @@ function renderCart(){
     row.querySelector("button").onclick = () => removeFromCart(it.id);
     list.appendChild(row);
   });
-  $("#cart-total").textContent = money(cartTotal());
+  document.getElementById("cart-total").textContent = money(cartTotal());
 }
-function openCart(){ $("#cart").classList.add("open"); $("#cart").style.pointerEvents="auto"; }
-function closeCart(){ $("#cart").classList.remove("open"); setTimeout(()=>$("#cart").style.pointerEvents="none",200); }
+function openCart(){ document.getElementById("cart").classList.add("open"); document.getElementById("cart").style.pointerEvents="auto"; }
+function closeCart(){ document.getElementById("cart").classList.remove("open"); setTimeout(()=>document.getElementById("cart").style.pointerEvents="none",200); }
 
 // ---------- Checkout (Hotmart por item) ----------
 function setupCheckout(){
-  const checkoutBtn = $("#checkout");
-  const multi = $("#multi-checkout");
+  const checkoutBtn = document.getElementById("checkout");
+  const multi = document.getElementById("multi-checkout");
   checkoutBtn.onclick = (e) => {
     if (!CART.length) { e.preventDefault(); alert("Seu carrinho está vazio."); return; }
 
@@ -168,27 +172,27 @@ function setupCheckout(){
       ${CART.map(it => `<a class="btn btn-primary" target="_blank" rel="noopener" href="${it.checkoutUrl}">Comprar "${it.title}" agora</a>`).join("")}
       <button class="btn" id="open-all">Abrir todos</button>
     `;
-    const openAll = $("#open-all");
+    const openAll = document.getElementById("open-all");
     if (openAll) openAll.onclick = () => CART.forEach(it => window.open(it.checkoutUrl, "_blank"));
   };
 }
 
 // ---------- INIT ----------
 window.addEventListener("DOMContentLoaded", () => {
-  $("#year").textContent = new Date().getFullYear();
+  document.getElementById("year").textContent = new Date().getFullYear();
 
   // Tema
-  const themeBtn = $("#theme-toggle");
+  const themeBtn = document.getElementById("theme-toggle");
   if (themeBtn) themeBtn.onclick = toggleTheme;
   initTheme();
 
   // Carrinho
-  $("#open-cart").onclick = openCart;
-  $("#close-cart").onclick = closeCart;
-  $("#cart-backdrop").onclick = closeCart;
+  document.getElementById("open-cart").onclick = openCart;
+  document.getElementById("close-cart").onclick = closeCart;
+  document.getElementById("cart-backdrop").onclick = closeCart;
 
   // Busca
-  const input = $("#search-input");
+  const input = document.getElementById("search-input");
   input.addEventListener("input", (ev)=>{ q = ev.target.value; renderGrid(); });
 
   renderTags();
