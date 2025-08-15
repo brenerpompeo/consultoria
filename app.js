@@ -1,25 +1,55 @@
 // ======= CONFIG =======
-// Checkout e agenda
-const CHECKOUT_URL = "https://exemplo-de-checkout.com"; // troque pelo seu link geral
-const CALENDLY_URL = "https://calendly.com/seu-link";   // troque pelo seu link
+const CHECKOUT_URL = ""; // não é usado quando cada eBook tem seu próprio link
+const CALENDLY_URL = "https://calendly.com/seu-link";
 
-// CMS externo gratuito (Contentful) — habilite quando tiver Space/Token
-const USE_CONTENTFUL   = true; // mude para true quando quiser usar CMS
-const CONTENTFUL_SPACE = "1kgxkf37biiv";    // ex.: "abcd1234xyz"
-const CONTENTFUL_TOKEN = "PlMk2iNRamJ_kmWCyJ4cyFX3-Hkqeiy0ucaPi_jQGxc";    // Content Delivery (só leitura)
-
-// ======= DADOS DE EXEMPLO (fallback local) =======
+// ======= LISTA DE EBOOKS (Hotmart por eBook) =======
+// Substitua checkoutUrl pelo link real de cada produto na Hotmart.
 const EBOOKS = [
-  { id: "e1", title: "Narrativa de Marca Pessoal", price: 79.0, tag: "Marca Pessoal", rating: 4.8, checkoutUrl: CHECKOUT_URL, image: "https://picsum.photos/seed/e1/800/500" },
-  { id: "e2", title: "Playbook de Posicionamento", price: 97.0, tag: "Estratégia",     rating: 4.9, checkoutUrl: CHECKOUT_URL, image: "https://picsum.photos/seed/e2/800/500" },
-  { id: "e3", title: "Storytelling para Apresentações", price: 69.0, tag: "Comunicação", rating: 4.7, checkoutUrl: CHECKOUT_URL, image: "https://picsum.photos/seed/e3/800/500" },
-  { id: "e4", title: "Rituais de Alta Performance", price: 59.0, tag: "Produtividade",  rating: 4.6, checkoutUrl: CHECKOUT_URL, image: "https://picsum.photos/seed/e4/800/500" },
-  { id: "e5", title: "Liderança Consciente", price: 89.0, tag: "Liderança",            rating: 4.8, checkoutUrl: CHECKOUT_URL, image: "https://picsum.photos/seed/e5/800/500" },
-  { id: "e6", title: "Conteúdo que Vende", price: 74.0, tag: "Vendas",                 rating: 4.7, checkoutUrl: CHECKOUT_URL, image: "https://picsum.photos/seed/e6/800/500" },
-  { id: "e7", title: "Guia ESG para Comunicação", price: 82.0, tag: "ESG",             rating: 4.6, checkoutUrl: CHECKOUT_URL, image: "https://picsum.photos/seed/e7/800/500" },
-  { id: "e8", title: "Pitch Magnético", price: 54.0, tag: "Comunicação",               rating: 4.5, checkoutUrl: CHECKOUT_URL, image: "https://picsum.photos/seed/e8/800/500" },
+  // 1) WhatsApp Sales (tendência forte no BR)
+  { id:"e1", title:"Playbook de Vendas no WhatsApp (2025)", price:89.0, tag:"Vendas", rating:4.8,
+    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E1", image:"https://picsum.photos/seed/wpp/800/500" },
+
+  // 2) IA generativa aplicada a conteúdo/marketing
+  { id:"e2", title:"IA Generativa na Prática: Prompts & Fluxos para Conteúdo", price:97.0, tag:"Comunicação", rating:4.9,
+    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E2", image:"https://picsum.photos/seed/ai/800/500" },
+
+  // 3) SEO & Conteúdo para a era da IA
+  { id:"e3", title:"SEO em 2025: Conteúdo para a era da IA (guia tático)", price:79.0, tag:"Estratégia", rating:4.7,
+    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E3", image:"https://picsum.photos/seed/seo/800/500" },
+
+  // 4) Live commerce e short video
+  { id:"e4", title:"Shorts & Lives: Storytelling e Conversão (Reels, TikTok, Live Commerce)", price:74.0, tag:"Comunicação", rating:4.6,
+    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E4", image:"https://picsum.photos/seed/short/800/500" },
+
+  // 5) ESG na comunicação
+  { id:"e5", title:"ESG na Comunicação: do discurso à prática (2025)", price:82.0, tag:"ESG", rating:4.6,
+    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E5", image:"https://picsum.photos/seed/esg/800/500" },
+
+  // 6) LinkedIn B2B para autoridade e pipeline
+  { id:"e6", title:"LinkedIn B2B: Autoridade, Conteúdo e Pipeline", price:84.0, tag:"Estratégia", rating:4.7,
+    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E6", image:"https://picsum.photos/seed/linkedin/800/500" },
+
+  // 7) Automação leve: WhatsApp + Email
+  { id:"e7", title:"Automação Leve: WhatsApp + E-mail para leads e vendas", price:78.0, tag:"Vendas", rating:4.6,
+    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E7", image:"https://picsum.photos/seed/auto/800/500" },
+
+  // 8) Storytelling imersivo (tendência de narrativas envolventes)
+  { id:"e8", title:"Brand Storytelling Imersivo: roteiros e rituais", price:69.0, tag:"Comunicação", rating:4.5,
+    checkoutUrl:"https://pay.hotmart.com/SEU_LINK_E8", image:"https://picsum.photos/seed/story/800/500" },
 ];
+
 const TAGS = ["Todos","Estratégia","Comunicação","Liderança","Produtividade","Marca Pessoal","ESG","Vendas"];
+
+// ======= CONTEÚDOS (Medium) =======
+// Troque pelas suas URLs reais do Medium
+const MEDIUM_POSTS = [
+  { id:"m1", title:"WhatsApp que converte: 7 atalhos de jornada", tag:"Vendas",
+    url:"https://medium.com/@seuusuario/whatsapp-atalhos", image:"https://picsum.photos/seed/med1/800/500", reading:"6 min" },
+  { id:"m2", title:"IA no conteúdo: 5 prompts que viram post em 15min", tag:"Comunicação",
+    url:"https://medium.com/@seuusuario/ia-prompts-conteudo", image:"https://picsum.photos/seed/med2/800/500", reading:"7 min" },
+  { id:"m3", title:"Lives que vendem: roteiro de 20 minutos", tag:"Comunicação",
+    url:"https://medium.com/@seuusuario/lives-roteiro", image:"https://picsum.photos/seed/med3/800/500", reading:"5 min" },
+];
 
 // ======= THEME (Light/Night) =======
 const THEME_KEY = "THEME";
@@ -50,12 +80,13 @@ const $  = s => document.querySelector(s);
 const $$ = s => document.querySelectorAll(s);
 const money = n => n.toLocaleString('pt-BR',{style:'currency', currency:'BRL'});
 
-function coverHtml(item){
-  return item.image
-    ? `<div class="cover"><img src="${item.image}" alt="Capa do eBook ${item.title}"></div>`
+function coverHtml(item, alt){
+  return item?.image
+    ? `<div class="cover"><img src="${item.image}" alt="${alt}"></div>`
     : `<div class="cover"></div>`;
 }
 
+/* ---------- RENDER: EBOOKS ---------- */
 function renderTags(){
   const wrap = $("#tag-pills"); if (!wrap) return;
   wrap.innerHTML = "";
@@ -79,42 +110,54 @@ function renderGrid(){
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `
-      ${coverHtml(item)}
-      <div class="badge">${item.tag}</div>
-      <h3 style="margin:10px 0 6px">${item.title}</h3>
-      <div class="micro" style="margin-bottom:10px">⭐ ${item.rating.toFixed(1)}</div>
-      <div style="font-size:20px; font-weight:700">${money(item.price)}</div>
+      ${coverHtml(item, `Capa do eBook ${item.title}`)}
+      <div class="meta"><span>${item.tag}</span><span class="dot"></span><span>⭐ ${item.rating.toFixed(1)}</span></div>
+      <h3 style="margin:8px 0 6px">${item.title}</h3>
+      <div class="meta"><strong>${money(item.price)}</strong></div>
       <div style="margin-top:10px; display:flex; gap:8px; flex-wrap:wrap">
-        <button class="btn btn-primary">Adicionar</button>
-        <a class="btn" target="_blank" rel="noopener" href="${item.checkoutUrl}">Comprar agora</a>
+        <button class="btn btn-primary" aria-label="Adicionar ${item.title} ao carrinho">Adicionar</button>
+        <a class="btn" target="_blank" rel="noopener" href="${item.checkoutUrl}" aria-label="Comprar ${item.title} agora">Comprar agora</a>
       </div>
     `;
-    // Destaque extra ao focar o CTA primário
     const addBtn = card.querySelector("button");
-    addBtn.onmouseenter = () => card.style.boxShadow = "0 14px 36px rgba(124,58,237,.35)";
+    addBtn.onmouseenter = () => card.style.boxShadow = "0 14px 30px rgba(124,58,237,.28)";
     addBtn.onmouseleave = () => card.style.boxShadow = "";
     addBtn.onclick = () => addToCart(item);
     grid.appendChild(card);
   });
 }
 
+/* ---------- RENDER: CONTEÚDOS (Medium) ---------- */
+function renderContent(){
+  const grid = $("#content-grid"); if (!grid) return;
+  grid.innerHTML = "";
+  MEDIUM_POSTS.forEach(post => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      ${coverHtml(post, `Capa do artigo ${post.title}`)}
+      <div class="meta"><span>${post.tag}</span><span class="dot"></span><span>${post.reading}</span></div>
+      <h3 style="margin:8px 0 10px">${post.title}</h3>
+      <div style="display:flex; gap:8px; flex-wrap:wrap">
+        <a class="btn" href="${post.url}" target="_blank" rel="noopener" aria-label="Abrir Medium: ${post.title}">Ler no Medium ↗</a>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+/* ---------- CART ---------- */
 function addToCart(item){
   if(!CART.find(i=>i.id===item.id)) CART.push(item);
   localStorage.setItem("CART", JSON.stringify(CART));
-  openCart();
-  renderCart();
+  openCart(); renderCart();
 }
-
 function removeFromCart(id){
   CART = CART.filter(i => i.id !== id);
   localStorage.setItem("CART", JSON.stringify(CART));
   renderCart();
 }
-
-function cartTotal(){
-  return CART.reduce((a,b)=>a+b.price,0);
-}
-
+function cartTotal(){ return CART.reduce((a,b)=>a+b.price,0); }
 function renderCart(){
   const list = $("#cart-items"); if (!list) return;
   list.innerHTML = "";
@@ -133,51 +176,49 @@ function renderCart(){
   });
   $("#cart-total").textContent = money(cartTotal());
 }
-
 function openCart(){ $("#cart").classList.add("open"); $("#cart").style.pointerEvents="auto"; }
 function closeCart(){ $("#cart").classList.remove("open"); setTimeout(()=>$("#cart").style.pointerEvents="none",200); }
 
-// ======= CMS: Contentful (opcional) =======
-async function fetchContentfulEbooks(){
-  const url = `https://cdn.contentful.com/spaces/${CONTENTFUL_SPACE}/environments/master/entries?content_type=ebook&order=fields.title&include=1`;
-  const res = await fetch(url, { headers: { Authorization: `Bearer ${CONTENTFUL_TOKEN}` }});
-  if(!res.ok) throw new Error("Falha ao carregar do Contentful");
-  const data = await res.json();
-  const assets = Object.fromEntries((data.includes?.Asset || []).map(a => [a.sys.id, a]));
-  return data.items.map(e => {
-    const imgId = e.fields.cover?.sys?.id;
-    const file  = imgId ? assets[imgId]?.fields?.file?.url : null;
-    return {
-      id: e.sys.id,
-      title: e.fields.title,
-      price: e.fields.price,
-      tag: e.fields.tag,
-      rating: e.fields.rating ?? 4.8,
-      image: file ? `https:${file}` : null,
-      checkoutUrl: e.fields.checkoutUrl || CHECKOUT_URL
-    };
-  });
+/* ---------- CHECKOUT (Hotmart por item) ---------- */
+function setupCheckout(){
+  const checkoutBtn = $("#checkout");
+  const multi = $("#multi-checkout");
+  checkoutBtn.onclick = (e) => {
+    if (!CART.length) { e.preventDefault(); alert("Seu carrinho está vazio."); return; }
+
+    if (CART.length === 1) {
+      // 1 item → vai direto para o link do item
+      const only = CART[0];
+      checkoutBtn.href = only.checkoutUrl;
+      return; // deixa seguir
+    }
+
+    // 2+ itens → lista de checkouts (Hotmart não consolida múltiplos produtos por padrão)
+    e.preventDefault();
+    multi.innerHTML = `
+      <div class="micro">Você tem ${CART.length} itens. Conclua cada compra separadamente na Hotmart:</div>
+      ${CART.map(it => `<a class="btn btn-primary" target="_blank" rel="noopener" href="${it.checkoutUrl}">Comprar "${it.title}" agora</a>`).join("")}
+      <button class="btn" id="open-all">Abrir todos</button>
+    `;
+    const openAll = $("#open-all");
+    if (openAll) openAll.onclick = () => CART.forEach(it => window.open(it.checkoutUrl, "_blank"));
+  };
 }
 
-// ======= INIT =======
-window.addEventListener("DOMContentLoaded", async () => {
+/* ---------- INIT ---------- */
+window.addEventListener("DOMContentLoaded", () => {
   // ano footer
   $("#year").textContent = new Date().getFullYear();
 
   // tema
-  const themeBtn = document.getElementById("theme-toggle");
+  const themeBtn = $("#theme-toggle");
   if (themeBtn) themeBtn.onclick = toggleTheme;
   initTheme();
 
-  // eventos carrinho/CTAs
+  // carrinho/CTAs
   $("#open-cart").onclick = openCart;
   $("#close-cart").onclick = closeCart;
   $("#cart-backdrop").onclick = closeCart;
-  $("#checkout").onclick = (e)=>{
-    if(!CHECKOUT_URL || CHECKOUT_URL.includes("exemplo")) {
-      e.preventDefault(); alert("Defina seu link de checkout em app.js");
-    }
-  };
   $("#cta-calendly").href = CALENDLY_URL;
   $("#cta-mentoria").href = CALENDLY_URL;
   $("#cta-proposta").href = CALENDLY_URL;
@@ -188,17 +229,9 @@ window.addEventListener("DOMContentLoaded", async () => {
   const input = $("#search-input");
   input.addEventListener("input", (ev)=>{ q = ev.target.value; renderGrid(); });
 
-  // Tenta CMS (Contentful); se falhar, usa mock local
-  try {
-    if (USE_CONTENTFUL && CONTENTFUL_SPACE && CONTENTFUL_TOKEN) {
-      const items = await fetchContentfulEbooks();
-      if (Array.isArray(items) && items.length) {
-        EBOOKS.length = 0; EBOOKS.push(...items); // sobrescreve o mock
-      }
-    }
-  } catch (e) { console.warn("[CMS]", e); }
-
   renderTags();
   renderGrid();
+  renderContent();
   renderCart();
+  setupCheckout();
 });
