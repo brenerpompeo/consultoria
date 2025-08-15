@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Arquitetura de Impacto — Consultoria & eBooks</title>
-  <meta name="description" content="Ecossistema com consultoria, programas e eBooks para acelerar comunicação e liderança." />
+  <title>Arquitetura de Impacto — eBooks Essenciais</title>
+  <meta name="description" content="Landing page AIDA com eBooks de baixo custo (até R$ 29,90) para acelerar comunicação, vendas e conteúdo." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -22,12 +22,10 @@
         <span>Arquitetura de Impacto</span>
       </a>
       <nav class="menu">
-        <a href="#inicio">Início</a>
-        <a href="#ebooks">eBooks</a>
-        <a href="#consultoria">Consultoria</a>
-        <a href="#programas">Programas</a>
-        <a href="#conteudos">Conteúdos</a>
-        <a href="#sobre">Sobre</a>
+        <a href="#beneficios">Benefícios</a>
+        <a href="#biblioteca">Biblioteca</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#faq">FAQ</a>
       </nav>
       <div class="actions-right">
         <button class="btn icon-only" id="theme-toggle" aria-label="Alternar tema">🌙</button>
@@ -42,26 +40,79 @@
   </header>
 
   <main id="inicio">
+    <!-- A — Atenção -->
     <section class="section hero">
       <div class="container">
         <div class="hero-surface">
-          <div class="badge">Ecossistema de Consultoria & eBooks</div>
-          <h1>Estratégia, comunicação e liderança — com conteúdo aplicável e suporte de especialistas</h1>
-          <p>Construa autoridade e gere resultado com serviços de consultoria, programas e uma biblioteca de eBooks focados em execução.</p>
+          <div class="badge">Todos os eBooks até <strong>R$ 29,90</strong></div>
+          <h1>eBooks essenciais para vender, comunicar e executar — rápido e sem enrolação</h1>
+          <p>Guias práticos, direto ao ponto, para resolver o que trava sua operação: WhatsApp, IA aplicada, SEO, LinkedIn, roteiros curtos e mais.</p>
           <div class="actions">
-            <a class="btn btn-primary" href="#ebooks">Explorar eBooks</a>
-            <a class="btn" href="#consultoria">Falar com consultor</a>
+            <a class="btn btn-primary" href="#biblioteca">Ver biblioteca</a>
+            <a class="btn" href="#beneficios">Como funciona</a>
+          </div>
+          <div class="trust">
+            <span>✔ Download imediato via Hotmart</span>
+            <span>✔ Conteúdo acionável</span>
+            <span>✔ Suporte por e-mail</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="ebooks">
+    <!-- I — Interesse -->
+    <section class="section" id="beneficios">
+      <div class="container">
+        <h2>Por que eBooks essenciais?</h2>
+        <div class="grid three">
+          <div class="card">
+            <div class="badge">Foco</div>
+            <h3>O que você precisa, só</h3>
+            <p class="muted">Sem teoria longa: frameworks, checklists e exemplos para usar hoje.</p>
+          </div>
+          <div class="card">
+            <div class="badge">Preço justo</div>
+            <h3>Até R$ 29,90</h3>
+            <p class="muted">Acessível para você testar, aplicar e já ver retorno no curto prazo.</p>
+          </div>
+          <div class="card">
+            <div class="badge">Execução</div>
+            <h3>Rituais e modelos</h3>
+            <p class="muted">Roteiros, prompts e templates prontos para adaptar ao seu contexto.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- D — Desejo (provas simples) -->
+    <section class="section" id="depoimentos">
+      <div class="container">
+        <h2>Resultados na prática</h2>
+        <div class="grid three">
+          <div class="card">
+            <p>“O playbook de WhatsApp virou meu roteiro diário. Em uma semana já fechei 3 vendas.”</p>
+            <p class="micro">— Cliente (nome/empresa aqui)</p>
+          </div>
+          <div class="card">
+            <p>“Os prompts de IA encurtaram minha produção de posts de 2h para 20min.”</p>
+            <p class="micro">— Cliente (nome/empresa aqui)</p>
+          </div>
+          <div class="card">
+            <p>“O guia de SEO me deu clareza de o que publicar e como medir.”</p>
+            <p class="micro">— Cliente (nome/empresa aqui)</p>
+          </div>
+        </div>
+        <p class="micro center" style="margin-top:8px;">Substitua por depoimentos reais quando tiver.</p>
+      </div>
+    </section>
+
+    <!-- A — Ação (biblioteca + filtros + busca) -->
+    <section class="section" id="biblioteca">
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>eBooks</h2>
-            <p class="muted">Biblioteca prática para acelerar posicionamento, comunicação e liderança.</p>
+            <h2>Biblioteca de eBooks</h2>
+            <p class="muted">Escolha por tema, adicione ao carrinho e finalize na Hotmart.</p>
           </div>
           <div class="filters">
             <div class="search">
@@ -74,107 +125,31 @@
           </div>
         </div>
         <div class="grid" id="ebooks-grid"></div>
-      </div>
-    </section>
 
-    <section class="section" id="consultoria">
-      <div class="container">
-        <h2>Consultoria</h2>
-        <p class="muted">Formatos sob medida para profissionais e empresas — do diagnóstico à execução.</p>
-        <div class="grid three">
-          <div class="card">
-            <div class="badge">Sprint</div>
-            <h3>Diagnóstico Express</h3>
-            <ul class="list">
-              <li>Mapa de posicionamento</li>
-              <li>Plano de ação — 30 dias</li>
-              <li>Recomendações por canal</li>
-            </ul>
-            <a class="btn" id="cta-calendly">Agendar</a>
-          </div>
-          <div class="card card-strong">
-            <div class="badge">Premium</div>
-            <h3>Mentoria 1:1 (12 semanas)</h3>
-            <ul class="list">
-              <li>Sessões semanais ao vivo</li>
-              <li>Roteiros & rituais</li>
-              <li>Suporte assíncrono</li>
-            </ul>
-            <a class="btn" id="cta-mentoria">Falar com especialista</a>
-          </div>
-          <div class="card">
-            <div class="badge">In-company</div>
-            <h3>Corporate Labs</h3>
-            <ul class="list">
-              <li>Workshops personalizados</li>
-              <li>Playbook de comunicação</li>
-              <li>Acompanhamento trimestral</li>
-            </ul>
-            <a class="btn" id="cta-proposta">Solicitar proposta</a>
-          </div>
+        <div class="guarantees">
+          <div class="badge">Transparência</div>
+          <p class="micro">Pagamento e entrega via Hotmart. 7 dias para trocar por outro título, se não for o que você esperava.</p>
         </div>
       </div>
     </section>
 
-    <section class="section" id="programas">
+    <!-- FAQ -->
+    <section class="section" id="faq">
       <div class="container">
-        <h2>Programas</h2>
-        <div class="grid two">
-          <div class="card">
-            <div class="row">
-              <h3>Cohort — Posicionamento na Prática</h3>
-              <span class="badge">Próx. turma: 15/09</span>
-            </div>
-            <ul class="list">
-              <li>4 encontros ao vivo</li>
-              <li>Templates & checklists</li>
-              <li>Comunidade</li>
-            </ul>
-            <a class="btn" id="cta-cohort">Inscrever-se</a>
-          </div>
-          <div class="card">
-            <div class="row">
-              <h3>Bootcamp — Storytelling & Pitch</h3>
-              <span class="badge">Próx. turma: 01/10</span>
-            </div>
-            <ul class="list">
-              <li>Imersão de 8h</li>
-              <li>Feedback individual</li>
-              <li>Certificado</li>
-            </ul>
-            <a class="btn" id="cta-bootcamp">Inscrever-se</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="conteudos">
-      <div class="container">
-        <h2>Conteúdos</h2>
-        <p class="muted">Artigos e guias publicados no Medium.</p>
-        <div class="grid three" id="content-grid"></div>
-        <div class="newsletter">
-          <div class="badge">Newsletter semanal</div>
-          <h3>Receba frameworks e checklists no seu e-mail</h3>
-          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Obrigado! (Integre seu provedor de e-mail aqui)');">
-            <input type="email" placeholder="Seu e-mail" required />
-            <button class="btn btn-primary" type="submit">Assinar</button>
-          </form>
-          <p class="micro center">Sem spam. Você pode cancelar quando quiser.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="sobre">
-      <div class="container">
-        <h2>Sobre o ecossistema</h2>
-        <div class="about">
-          <p><strong>Arquitetura de Impacto</strong> é um hub de soluções para líderes, criadores e times que desejam comunicar com clareza e gerar impacto real. Oferecemos consultoria sob medida, programas em grupo e uma biblioteca de eBooks para execução prática.</p>
-          <ul class="list">
-            <li>Abordagem ética e centrada em pessoas</li>
-            <li>Conteúdo autoral, direto ao ponto</li>
-            <li>Comunidade e apoio entre pares</li>
-          </ul>
+        <h2>Dúvidas frequentes</h2>
+        <div class="faq">
+          <details>
+            <summary>Como recebo o eBook?</summary>
+            <p>Após a compra na Hotmart, você recebe acesso imediato ao download e às atualizações futuras do arquivo.</p>
+          </details>
+          <details>
+            <summary>Posso pedir reembolso?</summary>
+            <p>Oferecemos 7 dias para troca por outro título da biblioteca. O reembolso segue a política da Hotmart para produtos digitais.</p>
+          </details>
+          <details>
+            <summary>Os materiais são atuais?</summary>
+            <p>Atualizamos periodicamente os guias quando há mudanças relevantes nas plataformas e boas práticas.</p>
+          </details>
         </div>
       </div>
     </section>
@@ -193,14 +168,14 @@
           </div>
           <span>Arquitetura de Impacto</span>
         </a>
-        <p class="micro">Ecossistema com consultoria, programas e eBooks para acelerar sua comunicação e liderança.</p>
+        <p class="micro">eBooks de baixo custo e alto impacto — do primeiro passo ao próximo nível.</p>
       </div>
       <div class="col">
         <h4>Mapa do site</h4>
-        <a href="#ebooks">eBooks</a>
-        <a href="#consultoria">Consultoria</a>
-        <a href="#programas">Programas</a>
-        <a href="#conteudos">Conteúdos</a>
+        <a href="#beneficios">Benefícios</a>
+        <a href="#biblioteca">Biblioteca</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#faq">FAQ</a>
       </div>
       <div class="col">
         <h4>Suporte</h4>
@@ -230,6 +205,6 @@
     </div>
   </aside>
 
-  <script src="app.js?v=2025-08-11-trends"></script>
+  <script src="app.js?v=2025-08-11-aida"></script>
 </body>
 </html>
