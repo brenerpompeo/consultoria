@@ -24,6 +24,7 @@
       <nav class="menu">
         <a href="#beneficios">Benefícios</a>
         <a href="#biblioteca">Biblioteca</a>
+        <a href="#transparencia">Transparência</a>
         <a href="#depoimentos">Depoimentos</a>
         <a href="#faq">FAQ</a>
       </nav>
@@ -73,7 +74,7 @@
           <div class="card">
             <div class="badge">Preço justo</div>
             <h3>Até R$ 29,90</h3>
-            <p class="muted">Acessível para você testar, aplicar e já ver retorno no curto prazo.</p>
+            <p class="muted">Acessível para aplicar e ver retorno no curto prazo.</p>
           </div>
           <div class="card">
             <div class="badge">Execução</div>
@@ -84,25 +85,34 @@
       </div>
     </section>
 
-    <!-- D — Desejo (provas simples) -->
+    <!-- D — Desejo (Depoimentos) -->
     <section class="section" id="depoimentos">
       <div class="container">
         <h2>Resultados na prática</h2>
-        <div class="grid three">
-          <div class="card">
-            <p>“O playbook de WhatsApp virou meu roteiro diário. Em uma semana já fechei 3 vendas.”</p>
-            <p class="micro">— Cliente (nome/empresa aqui)</p>
+        <div class="grid three testimonials">
+          <div class="card t-card">
+            <img class="avatar" src="https://i.pravatar.cc/120?img=12" alt="Foto da cliente Marina Costa (fictícia)" />
+            <div>
+              <p>“O playbook de WhatsApp virou meu roteiro diário. Em uma semana fechei 3 vendas.”</p>
+              <p class="micro">— <strong>Marina Costa</strong>, Gestora de Marketing</p>
+            </div>
           </div>
-          <div class="card">
-            <p>“Os prompts de IA encurtaram minha produção de posts de 2h para 20min.”</p>
-            <p class="micro">— Cliente (nome/empresa aqui)</p>
+          <div class="card t-card">
+            <img class="avatar" src="https://i.pravatar.cc/120?img=32" alt="Foto do cliente Rafael Lima (fictício)" />
+            <div>
+              <p>“Os prompts de IA encurtaram minha produção de posts de 2h para 20min.”</p>
+              <p class="micro">— <strong>Rafael Lima</strong>, Consultor B2B</p>
+            </div>
           </div>
-          <div class="card">
-            <p>“O guia de SEO me deu clareza de o que publicar e como medir.”</p>
-            <p class="micro">— Cliente (nome/empresa aqui)</p>
+          <div class="card t-card">
+            <img class="avatar" src="https://i.pravatar.cc/120?img=56" alt="Foto da cliente Luana Carvalho (fictícia)" />
+            <div>
+              <p>“O guia de SEO me deu clareza do que publicar e como medir, sem complicar.”</p>
+              <p class="micro">— <strong>Luana Carvalho</strong>, Empreendedora</p>
+            </div>
           </div>
         </div>
-        <p class="micro center" style="margin-top:8px;">Substitua por depoimentos reais quando tiver.</p>
+        <p class="micro center" style="margin-top:8px;">Imagens e nomes fictícios, meramente ilustrativos.</p>
       </div>
     </section>
 
@@ -126,9 +136,49 @@
         </div>
         <div class="grid" id="ebooks-grid"></div>
 
-        <div class="guarantees">
-          <div class="badge">Transparência</div>
-          <p class="micro">Pagamento e entrega via Hotmart. 7 dias para trocar por outro título, se não for o que você esperava.</p>
+        <!-- Transparência & Segurança -->
+        <div class="transparency" id="transparencia">
+          <div class="badge">Transparência & Segurança</div>
+          <ul class="trust-list">
+            <li>Pagamento processado pela <strong>Hotmart</strong> (ambiente seguro).</li>
+            <li><strong>Pix</strong> e cartões de crédito aceitos. Aprovação imediata para Pix e cartão.</li>
+            <li>Download liberado logo após a confirmação de pagamento.</li>
+            <li>Suporte por e-mail para dúvidas sobre acesso e atualizações.</li>
+          </ul>
+
+          <div class="payments">
+            <!-- Conjunto de logos (SVG simplificados) -->
+            <div class="pm pm-visa" aria-label="Visa" title="Visa">
+              <svg viewBox="0 0 64 20"><rect width="64" height="20" rx="4" fill="currentColor"/></svg><span>Visa</span>
+            </div>
+            <div class="pm pm-master" aria-label="Mastercard" title="Mastercard">
+              <svg viewBox="0 0 64 20">
+                <rect width="64" height="20" rx="4" fill="currentColor"/>
+                <circle cx="28" cy="10" r="6" fill="rgba(255,255,255,.85)"/>
+                <circle cx="36" cy="10" r="6" fill="rgba(255,255,255,.55)"/>
+              </svg><span>Mastercard</span>
+            </div>
+            <div class="pm pm-amex" aria-label="American Express" title="American Express">
+              <svg viewBox="0 0 64 20"><rect width="64" height="20" rx="4" fill="currentColor"/></svg><span>Amex</span>
+            </div>
+            <div class="pm pm-elo" aria-label="Elo" title="Elo">
+              <svg viewBox="0 0 64 20"><rect width="64" height="20" rx="4" fill="currentColor"/></svg><span>Elo</span>
+            </div>
+            <div class="pm pm-hiper" aria-label="Hipercard" title="Hipercard">
+              <svg viewBox="0 0 64 20"><rect width="64" height="20" rx="4" fill="currentColor"/></svg><span>Hipercard</span>
+            </div>
+            <div class="pm pm-pix" aria-label="Pix" title="Pix">
+              <svg viewBox="0 0 64 20"><rect width="64" height="20" rx="4" fill="currentColor"/></svg><span>Pix</span>
+            </div>
+          </div>
+
+          <div class="secure">
+            <span class="lock">🔒</span>
+            <div>
+              <strong>Ambiente seguro</strong>
+              <p class="micro">Seus dados são transmitidos com criptografia SSL. O checkout é realizado na Hotmart.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -140,15 +190,27 @@
         <div class="faq">
           <details>
             <summary>Como recebo o eBook?</summary>
-            <p>Após a compra na Hotmart, você recebe acesso imediato ao download e às atualizações futuras do arquivo.</p>
+            <p>Após a compra na Hotmart, você recebe acesso imediato ao download e às atualizações futuras do arquivo no próprio painel da Hotmart.</p>
           </details>
           <details>
-            <summary>Posso pedir reembolso?</summary>
-            <p>Oferecemos 7 dias para troca por outro título da biblioteca. O reembolso segue a política da Hotmart para produtos digitais.</p>
+            <summary>Quais formas de pagamento aceitam?</summary>
+            <p>Pix e cartões de crédito (Visa, Mastercard, Amex, Elo, Hipercard). A aprovação costuma ser imediata.</p>
           </details>
           <details>
-            <summary>Os materiais são atuais?</summary>
-            <p>Atualizamos periodicamente os guias quando há mudanças relevantes nas plataformas e boas práticas.</p>
+            <summary>Posso parcelar?</summary>
+            <p>O parcelamento depende da configuração do produto na Hotmart. Para eBooks até R$ 29,90 normalmente indicamos pagamento à vista para reduzir tarifas.</p>
+          </details>
+          <details>
+            <summary>Existe garantia?</summary>
+            <p>Oferecemos 7 dias para troca por outro título da biblioteca, e seguimos a política de reembolso da Hotmart para produtos digitais.</p>
+          </details>
+          <details>
+            <summary>Posso usar o material no meu time?</summary>
+            <p>Sinta-se à vontade para aplicar os modelos internamente. A redistribuição ou revenda do arquivo não é permitida.</p>
+          </details>
+          <details>
+            <summary>Como falo com suporte?</summary>
+            <p>Você pode responder ao e-mail de confirmação da Hotmart ou escrever para <strong>suporte@impacto.eco</strong> (exemplo).</p>
           </details>
         </div>
       </div>
@@ -174,6 +236,7 @@
         <h4>Mapa do site</h4>
         <a href="#beneficios">Benefícios</a>
         <a href="#biblioteca">Biblioteca</a>
+        <a href="#transparencia">Transparência</a>
         <a href="#depoimentos">Depoimentos</a>
         <a href="#faq">FAQ</a>
       </div>
@@ -205,6 +268,6 @@
     </div>
   </aside>
 
-  <script src="app.js?v=2025-08-11-aida"></script>
+  <script src="app.js?v=2025-08-11-pro"></script>
 </body>
 </html>
